@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f8fafc;
+    color:#1e293b;
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#334155;
+    font-weight:500;
+}
+
+.hero{
+    padding:100px 0;
+    text-align:center;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    padding:8px 18px;
+    border-radius:50px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    font-size:1.3rem;
+    margin-bottom:20px;
+}
+
+.hero-description{
+    max-width:800px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    background:white;
+    color:#2563eb;
+    padding:14px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.section{
+    padding:80px 0;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.card,
+.goal-box{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.card p{
+    margin-bottom:15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.area-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.area-card ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.bg-light{
+    background:#eef2ff;
+}
+
+.roles{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.roles span{
+    background:white;
+    padding:12px 18px;
+    border-radius:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
