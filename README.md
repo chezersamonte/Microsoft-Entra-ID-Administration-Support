@@ -2,3 +2,4 @@ Microsoft Entra ID Administration & Support provides hands-on training for manag
 
 Website:
 Microsoft Entra ID Administration & Support Lab
+https://chezersamonte.github.io/Microsoft-Entra-ID-Administration-Support/?utm_source=chatgpt.com
