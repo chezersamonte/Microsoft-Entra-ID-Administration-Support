@@ -6,7 +6,7 @@ A hands-on learning portfolio focused on Microsoft Entra ID administration, iden
 
 🌐 **View the portfolio here:**
 
-[Microsoft Entra ID Administration & Support Lab][https://chezersamonte.github.io/Microsoft-Entra-ID-Administration-Support/?utm_source=chatgpt.com)](https://chezersamonte.github.io/Microsoft-Entra-ID-Administration-Support/)
+https://chezersamonte.github.io/Microsoft-Entra-ID-Administration-Support/
 
 ## Overview
 
