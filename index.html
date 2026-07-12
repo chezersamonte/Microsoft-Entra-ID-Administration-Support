@@ -1,197 +1,1174 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Entra ID Administration & Support</title>
 
-    anchor.addEventListener('click', function(e) {
+    <link rel="stylesheet" href="style.css">
 
-        e.preventDefault();
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body id="top">
 
-        document.querySelector(
-            this.getAttribute('href')
-        ).scrollIntoView({
-            behavior: 'smooth'
-        });
+<header>
+    <div class="container">
 
-    });
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
 
-});
+    <div class="logo">
+        <a href="#top">Microsoft Entra ID Administration & Support</a>
+    </div>
 
-document.addEventListener("DOMContentLoaded", () => {
+<nav id="nav-menu">
+    <a href="#overview-goal">Overview</a>
 
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
+    
 
-    const learningToggle = document.getElementById("learning-toggle");
-    const dropdownContent = document.querySelector(".dropdown-content");
+<div class="dropdown">
 
-    /* Hamburger Menu */
+        <a href="#" id="learning-toggle">Learning Areas ▾</a>
 
-  menuToggle.addEventListener("click", (e) => {
+        <div class="dropdown-content">
+             <a href="#users">Users</a>
+            <a href="#groups">Groups</a>
+            <a href="#adminroles">Administrative Roles</a>
+            <a href="#mfa">Multi-factor Authentication (MFA)</a>
+            <a href="#conditional-access">Conditional Access</a>
+            <a href="#sspr">Self-Service Password Reset (SSPR)</a>
+            <a href="#devices">Devices</a>
+            <a href="#enterprise">Enterprise Applications</a>
+            <a href="#troubleshooting">Troubleshooting Scenarios</a>
+        </div>
 
-    e.stopPropagation();
+    </div>
 
-    navMenu.classList.toggle("active");
-    menuToggle.classList.toggle("active");
+    <a href="#roles">Career Paths</a>
+    <a href="#contact">Contact</a>
+</nav>
+    </div>
+</header>
 
-    if (!navMenu.classList.contains("active")) {
-        dropdownContent.classList.remove("show");
-        menuToggle.classList.remove("active");
-    }
+<section class="hero">
 
-});
+    <div class="container hero-content">
 
-document.querySelectorAll(
-    '#nav-menu a:not(#learning-toggle)'
-).forEach(link => {
+        <div class="hero-text">
 
-    link.addEventListener("click", () => {
+            <span class="badge">
+                Microsoft Entra ID Learning Project
+            </span>
 
-        navMenu.classList.remove("active");
-        dropdownContent.classList.remove("show");
-        menuToggle.classList.remove("active");
+            <h1>Microsoft Entra ID Administration & Support</h1>
 
-    });
+           <p class="subtitle">
+    Hands-On Learning for Microsoft Entra ID Administration, Identity & Access Management, and Support
+</p>
 
-});
+            <p class="hero-description">
+                Build practical skills in user and group management,
+                authentication, MFA, SSPR, Conditional Access, devices,
+                enterprise applications, administrative roles, and
+                troubleshooting through real-world Microsoft Entra ID scenarios.
+            </p>
 
-document.addEventListener("click", (e) => {
+            <a href="#users" class="btn-primary">
+                    Explore My Learning Journey
+             </a>
 
-    const clickedInsideMenu =
-        navMenu.contains(e.target) ||
-        menuToggle.contains(e.target);
+        </div>
 
-    if (!clickedInsideMenu) {
+        <div class="hero-image">
+            <img src="images/chezersamonte.png" alt="Chezer Samonte">
+        </div>
 
-        navMenu.classList.remove("active");
-        dropdownContent.classList.remove("show");
-        menuToggle.classList.remove("active");
+    </div>
 
-    }
+</section>
 
-});
+<section id="overview-goal" class="section bg-light">
 
-    /* Learning Areas Toggle */
+    <div class="container">
 
-    learningToggle.addEventListener("click", (e) => {
+        <h2>Project Overview & Goal</h2>
 
-        e.preventDefault();
-        e.stopPropagation();
+        <div class="grid">
 
-        dropdownContent.classList.toggle("show");
+            <div class="card">
+                <h3>📖 Project Overview</h3>
 
-});
+                <p>
+                    The Microsoft Entra ID Administration & Support Lab is a structured
+                    hands-on learning project designed to develop practical
+                    skills in Microsoft Entra ID administration, identity and
+                    access management, and enterprise IT support.
+                </p>
 
-    /* Close dropdown when clicking outside */
+                <p>
+                    The lab simulates a real-world business environment where
+                    user accounts, groups, authentication, devices, enterprise
+                    applications, and administrative roles are managed using
+                    Microsoft Entra ID.
+                </p>
 
-    document.addEventListener("click", (e) => {
+                <p>
+                    The project focuses on real-world administration,
+                    configuration, and troubleshooting tasks commonly performed
+                    by Level 1 and Level 2 Microsoft Entra ID Support Engineers.
+                </p>
+            </div>
 
-        if (
-            !learningToggle.contains(e.target) &&
-            !dropdownContent.contains(e.target)
-        ) {
-            dropdownContent.classList.remove("show");
-        }
+            <div class="card">
+                <h3>🎯 Project Goal</h3>
 
-    });
+                <p>
+                    To build the practical administration, identity management,
+                    security, and troubleshooting skills required to support
+                    Microsoft Entra ID environments in Level 1 and Level 2 IT
+                    Support, Help Desk, Service Desk, and Cloud Support roles.
+                </p>
 
-    /* Close menu when a navigation item is clicked */
+            </div>
 
-    document.querySelectorAll(
-        '#nav-menu a:not(#learning-toggle)'
-    ).forEach(link => {
+        </div>
 
-        link.addEventListener("click", () => {
+    </div>
 
-            navMenu.classList.remove("active");
-            dropdownContent.classList.remove("show");
+</section>
 
-        });
 
-    });
+<section id="roles" class="section bg-light">
 
-        /* Close menu when clicking outside */
+    <div class="container">
 
-document.addEventListener("click", (e) => {
+        <h2>Target Career Paths</h2>
 
-    const clickedInsideMenu =
-        navMenu.contains(e.target) ||
-        menuToggle.contains(e.target);
-
-    if (!clickedInsideMenu) {
-        navMenu.classList.remove("active");
-        dropdownContent.classList.remove("show");
-        menuToggle.classList.remove("active");
-    }
-
-    });
-
-
-});
-
-
-/* Back To Top Button */
-
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 500){
-        backToTop.classList.add("show");
-    }else{
-        backToTop.classList.remove("show");
-    }
-
-});
-
-backToTop.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-
-/* ENTRA ID ADMINISTRATION */
-
-const images = document.querySelectorAll(".gallery-item img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.getElementById("closeBtn");
-
-images.forEach(img=>{
-
-    img.addEventListener("click",()=>{
-
-        lightbox.style.display="flex";
-        lightboxImg.src=img.src;
-        lightboxImg.alt=img.alt;
-
-    });
-
-});
-
-closeBtn.onclick=()=>{
-
-    lightbox.style.display="none";
-
-};
-
-lightbox.onclick=(e)=>{
-
-    if(e.target===lightbox){
-
-        lightbox.style.display="none";
-
-    }
-
-};
-
-document.addEventListener("keydown",(e)=>{
-
-    if(e.key==="Escape"){
-
-        lightbox.style.display="none";
-
-    }
-
-});
+        <div class="roles">
+
+            <span>IT Support Specialist</span>
+            <span>Help Desk Support</span>
+            <span>Service Desk Analyst</span>
+            <span>Technical Support Engineer</span>
+            <span>Microsoft Entra ID Support Engineer</span>
+            <span>Identity & Access Support</span>
+            <span>Cloud Support Engineer</span>
+            <span>Desktop Support Technician</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <span id="closeBtn">&times;</span>
+    <img id="lightbox-img">
+</div>
+
+<section id="users" class="section bg-light">
+
+    <div class="container">
+
+        <h2>Microsoft Entra ID User Management</h2>
+
+        <div class="card bg-entra">
+
+            <div class="section-header">
+                <h2 class="gm">User Creation & Access Control</h2>
+
+                <p class="section-subtitle">
+                    Learn the essential user management tasks in the Microsoft Entra admin center, including creating, managing, securing, and restoring user accounts.
+                </p>
+            </div>
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <h3>Create User</h3>
+                    <img src="images/users/createuser.png" alt="Create User">
+                    <p>Create new cloud user accounts by configuring the user's name, username, password, profile information, and optional license assignments.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Edit User Information</h3>
+                    <img src="images/users/edit information.png" alt="Edit User Information">
+                    <p>Update user profile information including display name, job title, department, office location, contact details, and other account properties.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Reset Password</h3>
+                    <img src="images/users/resetpassword.png" alt="Reset Password">
+                    <p>Reset a user's password, generate a temporary password, and require the user to change it during their next sign-in.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Enable / Disable User</h3>
+                    <img src="images/users/disableorenableuseraccount.png" alt="Enable or Disable User">
+                    <p>Control user access by enabling or disabling sign-in without permanently deleting the account from Microsoft Entra ID.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Delete User</h3>
+                    <img src="images/users/deleteuser.png" alt="Delete User">
+                    <p>Remove user accounts from Microsoft Entra ID while retaining them temporarily for recovery during the retention period.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Restore Deleted User</h3>
+                    <img src="images/users/restoredeltedusers.png" alt="Restore Deleted User">
+                    <p>Recover recently deleted users along with their account information before the permanent deletion period expires.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Revoke Sessions</h3>
+                    <img src="images/users/revokesessions.png" alt="Revoke Sessions">
+                    <p>Invalidate all active user sessions and require the user to authenticate again across Microsoft 365 services and applications.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Bulk Operations</h3>
+                    <img src="images/users/bulkoperations.png" alt="Bulk Operations">
+                    <p>Access bulk management tools for creating users, downloading user lists, deleting accounts, and monitoring bulk administrative tasks.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Manage Roles</h3>
+                    <img src="images/users/manageroles.png" alt="Manage Roles">
+                    <p>Assign or remove Microsoft Entra administrator roles to grant users the permissions required to perform administrative tasks.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Manage Group Membership</h3>
+                    <img src="images/users/managegroups.png" alt="Manage Groups">
+                    <p>View group memberships, add or remove users from Security Groups and Microsoft 365 Groups, and verify group-based access.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>View Assigned Licenses</h3>
+                    <img src="images/users/viewlicenses.png" alt="View Licenses">
+                    <p>Review assigned Microsoft 365 licenses, available service plans, and verify whether users have access to licensed applications.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Manage User Devices</h3>
+                    <img src="images/users/managedevices.png" alt="Manage Devices">
+                    <p>View registered and joined devices, verify ownership, monitor device status, and manage device records associated with users.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Manage Authentication Methods</h3>
+                    <img src="images/users/manageauthenticationmethods.png" alt="Manage Authentication Methods">
+                    <p>Review or manage authentication methods including Microsoft Authenticator, phone numbers, FIDO2 security keys, and passwordless sign-in.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Create Temporary Access Pass</h3>
+                    <img src="images/users/createtemporaryaccesspass.png" alt="Temporary Access Pass">
+                    <p>Create a Temporary Access Pass to help users securely register new authentication methods or recover access to their account.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>View User Audit Logs</h3>
+                    <img src="images/users/viewuserauditlogs.png" alt="User Audit Logs">
+                    <p>Review administrative changes made to user accounts, including password resets, role assignments, profile updates, and license modifications.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>View User Sign-in Logs</h3>
+                    <img src="images/users/viewusersign-inglogs.png" alt="User Sign-in Logs">
+                    <p>Analyze user sign-in activity, authentication status, locations, devices, client applications, and Conditional Access evaluation results.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Manage Assigned Manager</h3>
+                    <img src="images/users/manageassignedmanager.png" alt="Assigned Manager">
+                    <p>Assign or update a user's manager to support organizational hierarchy, approval workflows, and Microsoft 365 collaboration features.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Upload Bulk Users</h3>
+                    <img src="images/users/uploadbulkusers.png" alt="Upload Bulk Users">
+                    <p>Create multiple user accounts at once by uploading a properly formatted CSV file using Microsoft Entra bulk user management.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Bulk Operation Results</h3>
+                    <img src="images/users/bulkoperationresult(preview).png" alt="Bulk Operation Results">
+                    <p>Monitor completed bulk operations, review successful and failed actions, and download detailed error reports for troubleshooting.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>View & Understand User Settings</h3>
+                    <img src="images/users/view&understandusersettings.png" alt="User Settings">
+                    <p>Explore tenant-wide user settings that control self-service capabilities, application registration, group creation, guest access, and user permissions.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="groups" class="section bg-light">
+    <div class="container">
+
+ <h2>Microsoft Entra ID Group Management</h2>
+
+        <div class="card bg-entra">
+
+            <div class="section-header">
+                <h2 class="gm">Group Creation & Management</h2>
+
+                <p class="section-subtitle">
+                    Learn the essential group management tasks in the Microsoft Entra admin center, including creating security groups, managing members, restoring deleted groups, and administering Microsoft 365 groups.
+                </p>
+            </div>
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <h3>Create Security Group</h3>
+                    <img src="images/groups/createsecuritygroup.png" alt="Create Security Group">
+                    <p>Create security groups to simplify permission management, assign access to resources, and manage users or devices collectively instead of individually.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Add Group Members</h3>
+                    <img src="images/groups/addmembertothegroup.png" alt="Add Group Members">
+                    <p>Add users, devices, service principals, or other supported objects to Security Groups or Microsoft 365 Groups to grant access and collaboration capabilities.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Remove Group Members</h3>
+                    <img src="images/groups/removemembertothegroup.png" alt="Remove Group Members">
+                    <p>Remove members from groups when they no longer require access to shared resources, applications, or organizational permissions.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Delete Group</h3>
+                    <img src="images/groups/deletegroup.png" alt="Delete Group">
+                    <p>Permanently remove unused or obsolete Security Groups and Microsoft 365 Groups that are no longer required within the organization.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Restore Deleted Group</h3>
+                    <img src="images/groups/restoregroup.png" alt="Restore Deleted Group">
+                    <p>Recover recently deleted Microsoft 365 Groups during the retention period, including their members, conversations, and associated resources.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>View Group Members</h3>
+                    <img src="images/groups/viewgroupmembers.png" alt="View Group Members">
+                    <p>Review all users, devices, or other directory objects assigned to a group and verify current membership information.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Manage Group Owners</h3>
+                    <img src="images/groups/managegroupowner.png" alt="Manage Group Owners">
+                    <p>View, add, or remove group owners responsible for managing memberships, updating group settings, and administering Security Groups or Microsoft 365 Groups.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Create Microsoft 365 Group</h3>
+                    <img src="images/groups/createmiscrosoft365.png" alt="Create Microsoft 365 Group">
+                    <p>Create Microsoft 365 Groups to enable collaboration across Outlook, Microsoft Teams, SharePoint, Planner, and other Microsoft 365 services.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Create Dynamic Group</h3>
+                    <img src="images/groups/dynamicgroup.png" alt="Dynamic Group">
+                    <p>Create Dynamic Security Groups or Dynamic Microsoft 365 Groups that automatically update membership based on Microsoft Entra user or device attributes.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Configure Dynamic Membership Rules</h3>
+                    <img src="images/groups/dynamicmembershiprules.png" alt="Dynamic Membership Rules">
+                    <p>Create and modify dynamic membership rules using user or device properties such as department, job title, country, or operating system to automate group membership.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Configure Group-based Licensing</h3>
+                    <img src="images/groups/group-basedlicensing.png" alt="Group-based Licensing">
+                    <p>Assign Microsoft 365 licenses to Security Groups so users automatically receive or remove licenses when they join or leave the group.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Configure Group Settings</h3>
+                    <img src="images/groups/configuregroupsettings.png" alt="Configure Group Settings">
+                    <p>Manage group configuration settings including naming policies, group expiration, creation permissions, guest access, and ownership management for Microsoft Entra groups.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="adminroles" class="section bg-light">
+    <div class="container">
+
+        <h2>Microsoft Entra ID Administrator Roles</h2>
+
+        <div class="card bg-entra">
+
+            <div class="section-header">
+                <h2 class="gm">Understanding Administrative Roles & Basic Management</h2>
+
+                <p class="section-subtitle">
+                    Learn the essential administrator role management tasks in the Microsoft Entra admin center, including role-based access control (RBAC), privileged access concepts, role assignments, and administrative access management.
+                </p>
+            </div>
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <h3>Understand Role-Based Access Control (RBAC)</h3>
+                    <img src="images/admin roles/Understand Role-Based Access Control (RBAC).png" alt="Role-Based Access Control">
+                    <p>
+                        Learn how Role-Based Access Control (RBAC) assigns permissions through built-in administrator roles, ensuring users receive only the access required to perform their administrative responsibilities.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Understand Privileged Access Concepts</h3>
+                    <img src="images/admin roles/understandingprivilegedaccessconcepts.png" alt="Privileged Access Concepts">
+                    <p>
+                        Explore privileged accounts, privileged roles, privileged identity management concepts, and security practices used to protect highly sensitive administrative accounts.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Understand the Principle of Least Privilege</h3>
+                    <img src="images/admin roles/understandingprincipleofleastprivilege.png" alt="Least Privilege">
+                    <p>
+                        Learn the Principle of Least Privilege by assigning only the minimum permissions users need, reducing security risks while maintaining operational efficiency.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Common Administrator Roles</h3>
+                    <img src="images/admin roles/familiaritywithcommonadminroles.png" alt="Common Administrator Roles">
+                    <p>
+                        Become familiar with commonly used Microsoft Entra administrator roles, including Global Administrator, User Administrator, Password Administrator, Groups Administrator, and Helpdesk Administrator.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Assign Administrator Roles</h3>
+                    <img src="images/admin roles/assignadminroles.png" alt="Assign Administrator Roles">
+                    <p>
+                        Assign built-in administrator roles to users, granting the permissions necessary to perform specific administrative tasks within Microsoft Entra ID and Microsoft 365.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Remove Administrator Roles</h3>
+                    <img src="images/admin roles/removeadminroles.png" alt="Remove Administrator Roles">
+                    <p>
+                        Remove administrator role assignments when elevated permissions are no longer required, helping maintain a secure and compliant administrative environment.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Manage Role-Assignable Groups</h3>
+                    <img src="images/admin roles/managerolesassignablegroups.png" alt="Role Assignable Groups">
+                    <p>
+                        Manage role-assignable groups that simplify administrator role assignments by allowing privileged roles to be granted through secure group membership.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Verify Administrator Access</h3>
+                    <img src="images/admin roles/verifyadminacess.png" alt="Verify Administrator Access">
+                    <p>
+                        Verify assigned administrator roles, review effective permissions, and confirm that users have the appropriate level of administrative access within Microsoft Entra ID.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section id="mfa" class="section bg-light">
+    <div class="container">
+
+        <h2>Microsoft Entra ID Multi-factor Authentication (MFA)</h2>
+
+        <div class="card bg-entra">
+
+            <div class="section-header">
+                <h2 class="gm">MFA Configuration & Support</h2>
+
+                <p class="section-subtitle">
+                    Learn the essential Multifactor Authentication (MFA) administration tasks in the Microsoft Entra admin center, including enabling MFA, managing authentication methods, configuring authentication policies, reviewing registration reports, and protecting user accounts with Conditional Access.
+                </p>
+            </div>
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <h3>Enable or Disable MFA per User</h3>
+                    <img src="images/mfa/Enable or Disable MFA per user.png" alt="Enable or Disable MFA per User">
+                    <p>Enable or disable per-user Multifactor Authentication (MFA) for individual users using the classic MFA management portal.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>View User's MFA Status</h3>
+                    <img src="images/mfa/View User's MFA Status.png" alt="View User's MFA Status">
+                    <p>View whether a user's per-user MFA status is Disabled, Enabled, or Enforced to verify their MFA configuration.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Reset or Delete a User's MFA Methods</h3>
+                    <img src="images/mfa/Reset or Delete a User's MFA Methods.png" alt="Reset or Delete a User's MFA Methods">
+                    <p>Reset or remove a user's registered authentication methods, allowing them to register new MFA methods when existing methods are unavailable or compromised.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Require Users to Re-register MFA</h3>
+                    <img src="images/mfa/Require users to re-register MFA.png" alt="Require Users to Re-register MFA">
+                    <p>Require users to register their authentication methods again during their next sign-in after replacing devices or recovering account access.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>View a User's Registered Authentication Methods</h3>
+                    <img src="images/mfa/View a User's Registered Authentication Methods.png" alt="View Registered Authentication Methods">
+                    <p>View all authentication methods registered by a user, including Microsoft Authenticator, phone numbers, FIDO2 Security Keys, passkeys, and Temporary Access Pass.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Add Authentication Methods for a User</h3>
+                    <img src="images/mfa/Add Authentication Methods for a User.png" alt="Add Authentication Methods for a User">
+                    <p>Add supported authentication methods, such as phone numbers or Temporary Access Pass (TAP), to help users securely access or recover their accounts.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Configure Authentication Methods Policy</h3>
+                    <img src="images/mfa/Configure Authentication Methods Policy.png" alt="Configure Authentication Methods Policy">
+                    <p>Configure which authentication methods users can register and use, including Microsoft Authenticator, SMS, Voice Calls, FIDO2 Security Keys, Passkeys, and Temporary Access Pass.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Review MFA Registration Details and Authentication Method Reports</h3>
+                    <img src="images/mfa/Review MFA registration details and authentication method reports.png" alt="Review MFA Registration Details and Authentication Method Reports">
+                    <p>Review MFA registration details and authentication method reports to monitor user registration, adoption, and authentication method usage across the organization.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Enable or Disable Microsoft Authenticator</h3>
+                    <img src="images/mfa/Enable or Disable Microsoft Authenticator.png" alt="Enable or Disable Microsoft Authenticator">
+                    <p>Enable or disable Microsoft Authenticator as an authentication method for Multifactor Authentication (MFA) and passwordless sign-in.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Configure Microsoft Authenticator Settings</h3>
+                    <img src="images/mfa/Configure Microsoft Authenticator settings Number Matching Location Context App Context.png" alt="Configure Microsoft Authenticator Settings">
+                    <p>Configure Number Matching, Location Context, and App Context to improve Microsoft Authenticator security and protect against MFA fatigue attacks.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Enable or Disable SMS Authentication</h3>
+                    <img src="images/mfa/Enable or disable SMS authentication.png" alt="Enable or Disable SMS Authentication">
+                    <p>Enable or disable SMS authentication, allowing users to verify their identity using one-time verification codes delivered by text message.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Enable or Disable Voice Call Authentication</h3>
+                    <img src="images/mfa/Enable or disable Voice Call authentication.png" alt="Enable or Disable Voice Call Authentication">
+                    <p>Enable or disable voice call authentication, allowing users to verify their identity through automated phone calls.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Enable or Disable FIDO2 Security Keys</h3>
+                    <img src="images/mfa/Enable or disable FIDO2 Security Keys.png" alt="Enable or Disable FIDO2 Security Keys">
+                    <p>Enable or disable FIDO2 Security Keys to provide phishing-resistant passwordless authentication using supported hardware security keys.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Manage Temporary Access Pass (TAP)</h3>
+                    <img src="images/mfa/Manage Temporary Access Pass (TAP).png" alt="Manage Temporary Access Pass">
+                    <p>Create, manage, and revoke Temporary Access Passes (TAP) to help users register authentication methods or recover secure access to their accounts.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Create a Conditional Access Policy that Requires MFA</h3>
+                    <img src="images/mfa/Create a Conditional Access policy that requires MFA.png" alt="Create a Conditional Access Policy that Requires MFA">
+                    <p>Create Conditional Access policies that require Multifactor Authentication (MFA) for selected users, groups, cloud apps, or sign-in scenarios.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h3>Enable or Disable Security Defaults (MFA Enforcement)</h3>
+                    <img src="images/mfa/Enable or disable Security Defaults (MFA enforcement).png" alt="Enable or Disable Security Defaults">
+                    <p>Enable or disable Microsoft Entra Security Defaults, which provide baseline security by enforcing MFA, protecting administrator accounts, and blocking legacy authentication.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CONDITIONAL ACCESS MANAGEMENT -->
+
+
+<section id="conditional-access" class="section bg-light">
+
+    <div class="container">
+
+         <h2>Microsoft Entra ID Conditional Access</h2>
+
+        <div class="section-header">
+            <h2 class="gm">Conditional Access Configuration & Support</h2>
+
+            <p class="section-subtitle">
+                Learn the essential Conditional Access administration tasks in the Microsoft Entra admin center, including creating and managing policies, configuring user and application assignments, defining conditions and access controls, testing policies safely using Report-only mode, and validating policy results through Sign-in Logs.
+            </p>
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <h3>View, Create, and Manage New and Existing Policies</h3>
+                <img src="images/conditional access/View, Create, and Manage new and Existing Policies.png" alt="View, Create, and Manage New and Existing Policies">
+                <p>
+                    Create, edit, enable, disable, and manage Conditional Access policies to protect users, applications, and organizational resources.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View & Configure User and Group Assignments</h3>
+                <img src="images/conditional access/View & Configure User and Group Assignments.png" alt="View & Configure User and Group Assignments">
+                <p>
+                    Configure which users, groups, directory roles, or guest users are included or excluded from Conditional Access policies.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View & Configure Target Resources</h3>
+                <img src="images/conditional access/View & Configure Target Resources.png" alt="View & Configure Target Resources">
+                <p>
+                    Select the cloud applications, user actions, or authentication contexts that Conditional Access policies will protect.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View & Configure Network</h3>
+                <img src="images/conditional access/View & Configure Network.png" alt="View & Configure Network">
+                <p>
+                    Configure trusted locations, named locations, countries, regions, and IP ranges to control access based on network location.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View & Configure Conditions</h3>
+                <img src="images/conditional access/View & Configure Conditions.png" alt="View & Configure Conditions">
+                <p>
+                    Configure policy conditions such as device platforms, client apps, sign-in risk, user risk, device filters, and authentication flows.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View & Configure Grant Access or Block Access</h3>
+                <img src="images/conditional access/View & Configure Grant Access or Block Access.png" alt="View & Configure Grant Access or Block Access">
+                <p>
+                    Configure access controls such as requiring Multifactor Authentication (MFA), compliant devices, authentication strength, or blocking access.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View & Configure Session Controls</h3>
+                <img src="images/conditional access/View & Configure Session.png" alt="View & Configure Session Controls">
+                <p>
+                    Configure session controls including sign-in frequency, persistent browser sessions, Continuous Access Evaluation (CAE), and application restrictions.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Test Policies Safely Using Report-only Mode</h3>
+                <img src="images/conditional access/Test Policies Safely using Report-only Mode.png" alt="Test Policies Safely Using Report-only Mode">
+                <p>
+                    Test Conditional Access policies in Report-only mode to evaluate how they would affect users without enforcing access restrictions.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Validate Results in Sign-in Logs</h3>
+                <img src="images/conditional access/Validate results in Sign-in Logs.png" alt="Validate Results in Sign-in Logs">
+                <p>
+                    Review Sign-in Logs to verify whether Conditional Access policies were applied, determine policy results, and troubleshoot authentication or access issues.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Self Service Password Reset (SSPR) Management -->
+
+<section id="sspr" class="section bg-light">
+
+    <div class="container">
+
+         <h2>Microsoft Entra ID Self-Service Password Reset (SSPR)</h2>
+
+        <div class="section-header">
+            <h2 class="gm">Self-Service Password Reset Configuration & Support</h2>
+
+            <p class="section-subtitle">
+                Learn the essential Self-Service Password Reset (SSPR) administration tasks in the Microsoft Entra admin center, including enabling SSPR, configuring user scope, authentication requirements, user registration, notifications, helpdesk information, and validating password reset functionality.
+            </p>
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <h3>Enable or Disable SSPR</h3>
+                <img src="images/sspr/Enable or Disable SSPR.png" alt="Enable or Disable SSPR">
+                <p>
+                    Enable or disable Self-Service Password Reset (SSPR) for all users or selected groups to allow users to reset their passwords without contacting the helpdesk.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Configure SSPR Scope</h3>
+                <img src="images/sspr/Configure SSPR Scope.png" alt="Configure SSPR Scope">
+                <p>
+                    Configure whether Self-Service Password Reset (SSPR) is available to all users or only selected security groups within the organization.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Configure Authentication Methods for SSPR</h3>
+                <img src="images/sspr/Configure Authentication Methods for SSPR.png" alt="Configure Authentication Methods for SSPR">
+                <p>
+                    Configure the authentication methods available for Self-Service Password Reset (SSPR) through the Authentication Methods policy, including Microsoft Authenticator, SMS, Voice Call, FIDO2 Security Keys, Passkeys, and Temporary Access Pass.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Configure Number of Authentication Methods Required</h3>
+                <img src="images/sspr/Configure Number of Authentication Methods Required.png" alt="Configure Number of Authentication Methods Required">
+                <p>
+                    Configure whether users must verify their identity using one or two authentication methods before completing a Self-Service Password Reset (SSPR).
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Configure User Registration Settings</h3>
+                <img src="images/sspr/Configure User Registration Settings.png" alt="Configure User Registration Settings">
+                <p>
+                    Configure SSPR registration settings by requiring users to register authentication methods during sign-in and specifying how often they must re-confirm their authentication information.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Configure Notifications</h3>
+                <img src="images/sspr/Configure Notifications.png" alt="Configure Notifications">
+                <p>
+                    Configure email notifications to inform users and administrators when passwords are reset, helping improve account security and monitoring.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Configure Custom Helpdesk Information</h3>
+                <img src="images/sspr/Configure Custom Helpdesk Information.png" alt="Configure Custom Helpdesk Information">
+                <p>
+                    Configure custom helpdesk contact information and support links displayed to users during the Self-Service Password Reset (SSPR) process.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Test and Validate SSPR Configuration</h3>
+                <img src="images/sspr/Test and Validate SSPR Configuration.png" alt="Test and Validate SSPR Configuration">
+                <p>
+                    Test the Self-Service Password Reset (SSPR) experience to verify that authentication methods, registration requirements, notifications, and password reset policies are working as expected.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Device Management  -->
+
+<section id="devices" class="section bg-light">
+
+    <div class="container">
+        <h2>Microsoft Entra ID Devices</h2>
+
+        <div class="section-header">
+            <h2 class="gm">Devices Management & Support</h2>
+
+            <p class="section-subtitle">
+                Learn the essential device administration tasks in the Microsoft Entra admin center, including viewing and managing devices, understanding device join types, checking device status and ownership, reviewing device properties, recovering BitLocker keys, viewing Local Administrator Password Solution (LAPS) passwords, and auditing device activities.
+            </p>
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <h3>Find and View Devices</h3>
+                <img src="images/devices/Find and View Devices.png" alt="Find and View Devices">
+                <p>
+                    Search for and view registered, Microsoft Entra joined, and hybrid joined devices managed within the organization.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Understand Device Join Types</h3>
+                <img src="images/devices/Understand Device Join Types.png" alt="Understand Device Join Types">
+                <p>
+                    Learn the differences between Microsoft Entra Joined, Microsoft Entra Hybrid Joined, and Microsoft Entra Registered devices and their respective use cases.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Check Device Status</h3>
+                <img src="images/devices/Check Device Status.png" alt="Check Device Status">
+                <p>
+                    Review device status, including whether a device is enabled, disabled, compliant, managed, and synchronized with Microsoft Entra ID.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Identify Device Ownership</h3>
+                <img src="images/devices/Identify Device Ownership.png" alt="Identify Device Ownership">
+                <p>
+                    Identify the user assigned to a device and determine device ownership for troubleshooting and administrative purposes.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View Device Properties</h3>
+                <img src="images/devices/View Device Properties.png" alt="View Device Properties">
+                <p>
+                    Review device details such as operating system, device ID, join type, trust type, ownership, registration date, and last sign-in activity.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Enable, Disable, or Delete a Device</h3>
+                <img src="images/devices/Enable, Disable, or Delete a Device.png" alt="Enable, Disable, or Delete a Device">
+                <p>
+                    Enable, disable, or delete devices to control organizational access and manage the device lifecycle.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Restore Deleted Devices</h3>
+                <img src="images/devices/Restore deleted devices.png" alt="Restore Deleted Devices">
+                <p>
+                    Restore recently deleted devices when available to recover device records and maintain organizational access.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View Device BitLocker Recovery Keys</h3>
+                <img src="images/devices/View Device Bitlocker keys.png" alt="View Device BitLocker Recovery Keys">
+                <p>
+                    View BitLocker recovery keys stored in Microsoft Entra ID to assist users in unlocking encrypted Windows devices.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View Local Administrator Password Recovery (Windows LAPS)</h3>
+                <img src="images/devices/View Device Local administrator password recovery.png" alt="View Local Administrator Password Recovery">
+                <p>
+                    Retrieve the Windows Local Administrator Password Solution (LAPS) password for supported devices when administrative access is required.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Check Device Audit Logs</h3>
+                <img src="images/devices/Check Device Audit logs.png" alt="Check Device Audit Logs">
+                <p>
+                    Review device audit logs to track administrative actions such as device registration, updates, deletion, enablement, and other management activities.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section id="enterprise" class="section bg-light">
+
+    <div class="container">
+        <h2>Microsoft Entra ID Enterprise Applications</h2>
+
+        <div class="section-header">
+            <h2 class="gm">Enterprise Applications Basic Management & Support</h2>
+
+            <p class="section-subtitle">
+                Learn the essential Level 1 Microsoft Entra Enterprise Application administration tasks, including searching and viewing enterprise applications, managing user and group assignments, reviewing assigned application roles, checking Single Sign-On (SSO) configuration, verifying application properties, and monitoring application sign-in activity.
+            </p>
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <h3>Search and View Enterprise Applications</h3>
+                <img src="images/enterprise app/Search and View Enterprise Applications.png" alt="Search and View Enterprise Applications">
+                <p>
+                    Locate enterprise applications and review their Overview, Properties, Users and Groups, Application Roles, and Sign-in Logs.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Assign Users or Groups to an Application</h3>
+                <img src="images/enterprise app/Assign Users or Groups to an Application.png" alt="Assign Users or Groups to an Application">
+                <p>
+                    Assign users or security groups to an enterprise application so they can access the application based on organizational requirements.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Remove User Assignments</h3>
+                <img src="images/enterprise app/Remove User Assignments.png" alt="Remove User Assignments">
+                <p>
+                    Remove users or groups from an enterprise application to revoke access when it is no longer required.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Verify User &amp; Group Assignments</h3>
+                <img src="images/enterprise app/Verify User &amp; Group Assignments.png" alt="Verify User &amp; Group Assignments">
+                <p>
+                    Verify that the correct users and groups have been assigned to an enterprise application and confirm access permissions.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View Assigned Application Roles</h3>
+                <img src="images/enterprise app/View Assigned Application Roles.png" alt="View Assigned Application Roles">
+                <p>
+                    Review the application roles assigned to users and groups to ensure the appropriate level of access.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Review Sign-in Logs</h3>
+                <img src="images/enterprise app/Review Sign-in Logs.png" alt="Review Sign-in Logs">
+                <p>
+                    Review application sign-in logs to monitor authentication activity, identify failures, and assist with troubleshooting.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>View Single Sign-On (SSO) Configuration</h3>
+                <img src="images/enterprise app/View Single Sign-On (SSO) Configuration.png" alt="View Single Sign-On (SSO) Configuration">
+                <p>
+                    Review the configured Single Sign-On (SSO) settings, including the sign-on method and related configuration details.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <h3>Verify Application Properties</h3>
+                <img src="images/enterprise app/Verify Application Properties.png" alt="Verify Application Properties">
+                <p>
+                    Verify application properties such as the application name, status, visibility, assignment requirements, and other configuration settings.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ======================================
+            CONTACT
+====================================== -->
+
+<section id="contact">
+
+    <div class="contact-wrapper">
+
+        <!-- LEFT COLUMN -->
+
+        <div class="contact-info">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                Thank you for exploring my
+                <strong>Microsoft Entra ID Administration &amp; Support Learning Portfolio</strong>.
+            </p>
+
+            <p>
+                This portfolio highlights my hands-on learning journey in
+                Microsoft Entra ID Administration, Microsoft 365 Administration,
+                identity and access management, user and group management,
+                authentication, Multi-Factor Authentication (MFA),
+                Self-Service Password Reset (SSPR),
+                Conditional Access, enterprise applications,
+                administrative roles, and troubleshooting.
+            </p>
+
+            <br>
+
+            <p>
+                I'm continuously expanding my skills through practical lab environments
+                to prepare for enterprise IT Support, Microsoft 365 Administration,
+                and Identity &amp; Access Management roles.
+            </p>
+
+             <br>
+             
+            <p>
+                If you'd like to discuss Microsoft technologies,
+                cloud administration, IT support,
+                or career opportunities,
+                I'd be happy to connect.
+            </p>
+
+            <div class="contact-buttons">
+
+                <a href="https://www.linkedin.com/in/chezer-samonte-9a6778153/"
+                   class="btn-contact linkedin-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+
+                </a>
+
+                <a href="https://github.com/chezersamonte"
+                   class="btn-contact github-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fab fa-github"></i>
+                    <span>View Projects</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+
+        <div class="contact-form-card">
+
+            <h3>Send Me a Message</h3>
+
+            <p class="form-subtitle">
+                I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.
+            </p>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <input
+                    type="hidden"
+                    name="access_key"
+                    value="6c1ff640-c8b0-4ca1-a8b0-cb51904c73c4">
+
+                <input
+                    type="hidden"
+                    name="subject"
+                    value="New Message from Microsoft Entra ID Portfolio">
+
+                <input
+                    type="hidden"
+                    name="project"
+                    value="Microsoft Entra ID Administration & Support Portfolio">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email Address"
+                    required>
+
+                <input
+                    type="text"
+                    name="message_subject"
+                    placeholder="Subject"
+                    required>
+
+                <textarea
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message..."
+                    required></textarea>
+
+                <!-- Spam Protection -->
+                <input
+                    type="checkbox"
+                    name="botcheck"
+                    style="display:none;">
+
+                <button type="submit">
+
+                    <i class="fas fa-paper-plane"></i>
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container">
+
+        <h3>Microsoft Entra ID Administration Lab</h3>
+
+        <p>
+            Hands-on Microsoft Entra ID administration and
+            troubleshooting for IT Support and Identity & Access Management professionals.
+        </p>
+
+    </div>
+
+</footer>
+
+<button id="backToTop" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
