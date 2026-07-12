@@ -262,12 +262,18 @@ nav a{
         padding:60px 0;
     }
 
-    .hero-content{
-        flex-direction:column-reverse;
-        text-align:center;
-        gap:30px;
-    }
+  .hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
 
+.hero-text{
+    flex:1;
+    max-width:650px;
+    text-align:left;
+}
     .hero h1{
         font-size:2.3rem;
         line-height:1.2;
@@ -300,10 +306,20 @@ nav a{
 
 .badge{
     display:inline-block;
-    background:rgba(255,255,255,.15);
-    padding:8px 18px;
-    border-radius:50px;
-    margin-bottom:20px;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+
+    padding:10px 20px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:4px;
+
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.5px;
+
+    backdrop-filter:blur(10px);
 }
 
 .hero h1{
@@ -339,13 +355,25 @@ nav a{
 }
 
 .hero-image img{
-    width: 300px;
-    height: 300px;
+    width:420px;
+    height:500px;
+
     object-fit:cover;
-    object-position:center 30%;
-    border-radius:50%;
-    border:6px solid rgba(255,255,255,.2);
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    object-position:center 90%;
+
+    border:14px solid rgba(255,255,255,.20);
+   
+    border-radius:8px;
+
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.30);
+
+    transition:.3s ease;
+}
+
+.hero-image img:hover{
+    transform:translateY(-8px);
 }
 
 /* HERO BUTTON - EXPLORE MY LEARNING JOURNEY */
@@ -371,6 +399,18 @@ nav a{
     transform: translateY(0);
 }
 
+/* Tablet */
+
+@media (max-width:1024px){
+
+    .hero-image img{
+        width:340px;
+        height:420px;
+        object-fit:cover;
+        object-position:center 50%;
+    }
+
+}
 
 /* Mobile */
 @media(max-width:768px){
@@ -383,6 +423,7 @@ nav a{
     .hero-image img{
         width:220px;
         height:220px;
+         object-position:center 45%;
     }
 
     .hero h1{
@@ -807,88 +848,6 @@ footer{
 }
 
 
-/* ===============================
-   Contact Buttons
-=================================*/
-
-#contact {
-    text-align: center;
-}
-
-#contact .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    padding: 14px 30px;
-    margin: 12px;
-
-    min-width: 200px;
-
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-
-    border-radius: 10px;
-    transition: all 0.3s ease;
-
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-}
-
-/* LinkedIn Button */
-#contact .btn-primary {
-    background: #0A66C2;
-    color: #fff;
-}
-
-#contact .btn-primary:hover {
-    background: #004182;
-    transform: translateY(-4px);
-    box-shadow: 0 14px 28px rgba(10,102,194,.35);
-}
-
-/* GitHub Button */
-#contact .btn-secondary {
-    background: #24292e;
-    color: #fff;
-}
-
-#contact .btn-secondary:hover {
-    background: #000;
-    transform: translateY(-4px);
-    box-shadow: 0 14px 28px rgba(0,0,0,.30);
-}
-
-/* Icon Size */
-#contact .btn i {
-    font-size: 20px;
-}
-
-/* Mobile */
-@media (max-width:768px){
-
-    #contact .btn{
-        width:100%;
-        max-width:320px;
-        margin:10px auto;
-        display:flex;
-    }
-
-}
-
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:20px;
-    margin-top:35px;
-}
-
-#contact{
-    padding: 90px 0;
-}
 
 
 /* ===============================
@@ -934,3 +893,346 @@ footer{
 }
 
 
+/* ==========================================
+   CONTACT SECTION
+========================================== */
+
+#contact{
+    padding:100px 0;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+}
+
+.contact-wrapper{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:1fr 480px;
+    gap:70px;
+    align-items:center;
+}
+
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.contact-info h2{
+    font-size:2.6rem;
+     color:#fff;
+    margin-bottom:22px;
+}
+
+.contact-info p{
+     color:rgba(255,255,255,.88);
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+.contact-info strong{
+    color:#fff;
+}
+
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.contact-buttons{
+    display:flex;
+    gap:18px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn-contact{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    width:210px;
+    height:54px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.btn-contact i{
+    font-size:18px;
+}
+
+/* LinkedIn */
+
+.btn-contact.btn-primary{
+
+    background:#2563eb;
+    color:#fff;
+
+    border:none;
+
+    box-shadow:0 12px 30px rgba(37,99,235,.25);
+
+}
+
+.btn-contact.btn-primary:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+}
+
+
+/* GitHub */
+
+.btn-contact.btn-outline{
+
+    background:#fff;
+
+    color:#334155;
+
+    border:1px solid #dbeafe;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+}
+
+.btn-contact.btn-outline:hover{
+
+    color:#2563eb;
+
+    border-color:#2563eb;
+
+    transform:translateY(-4px);
+
+}
+
+
+/* ==========================================
+   FORM CARD
+========================================== */
+
+.contact-form-card{
+
+    background:#fff;
+
+    padding:42px;
+
+    border-radius:18px;
+
+    border:1px solid #dbeafe;
+
+    box-shadow:
+        0 18px 45px rgba(15,23,42,.08);
+
+}
+
+
+
+
+.contact-form-card h3{
+
+    color:#1e3a8a;
+
+    font-size:1.6rem;
+
+    margin-bottom:28px;
+
+}
+
+
+/* ==========================================
+   FORM
+========================================== */
+
+.contact-form-card form{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+.contact-form-card input,
+.contact-form-card textarea{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    border:1px solid #dbeafe;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    transition:.3s;
+
+}
+
+.contact-form-card textarea{
+
+    resize:vertical;
+    min-height:170px;
+
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+
+/* ==========================================
+   SUBMIT BUTTON
+========================================== */
+
+.contact-form-card button{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.contact-form-card button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 18px 35px rgba(37,99,235,.30);
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:1024px){
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    #contact{
+
+        padding:80px 0;
+
+    }
+
+    .contact-info{
+
+        text-align:center;
+
+    }
+
+    .contact-info h2{
+
+        font-size:2rem;
+
+    }
+
+    .contact-buttons{
+
+        justify-content:center;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .btn-contact{
+
+        width:100%;
+        max-width:320px;
+
+    }
+
+    .contact-form-card{
+
+        padding:30px;
+
+    }
+
+}
+
+
+.linkedin-btn{
+    background:linear-gradient(135deg,#0A66C2,#004182);
+    color:#fff;
+    border:none;
+    box-shadow:0 12px 30px rgba(10,102,194,.25);
+}
+
+.linkedin-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(10,102,194,.35);
+}
+
+.github-btn{
+    background:#fff;
+    color:#1e293b;
+    border:1px solid #dbeafe;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.github-btn:hover{
+    color:#2563eb;
+    border-color:#2563eb;
+    transform:translateY(-4px);
+    box-shadow:0 18px 35px rgba(37,99,235,.18);
+}
